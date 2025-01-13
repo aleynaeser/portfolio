@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        background: 'var(--background)',
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         accent: 'var(--accent)',
@@ -18,8 +19,6 @@ export default {
         success: 'var(--success)',
         warning: 'var(--warning)',
         error: 'var(--error)',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
       },
     },
   },

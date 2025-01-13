@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import BackgroundWaves from '@components/BackgroundWaves';
 
 import '@styles/globals.scss';
 
@@ -31,7 +32,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name='theme-color' content='#f9f9f9' />
       </head>
 
-      <body className={`h-screen bg-[var(--background)] text-sm text-[var(--foreground)]`}>{children}</body>
+      <body className={`h-screen bg-[var(--background)] text-sm text-[var(--primary)]`}>
+        {children}
+        <BackgroundWaves />
+      </body>
     </html>
   );
 }
