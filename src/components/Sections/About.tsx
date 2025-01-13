@@ -1,3 +1,4 @@
+import ShinyText from '@components/ShinyText';
 import React from 'react';
 
 export default function About() {
@@ -7,7 +8,10 @@ export default function About() {
         <div>Get more out</div>
 
         <div className='pt-6'>
-          <div>Creativity</div>
+          <div className='relative w-fit p-4'>
+            <ShinyText text='Creativity' />
+            <span className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-[var(--background)] to-[var(--base)]'></span>
+          </div>
         </div>
       </div>
 
