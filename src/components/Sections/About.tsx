@@ -1,4 +1,3 @@
-import ShinyText from '@components/ShinyText';
 import React from 'react';
 
 export default function About() {
@@ -9,7 +8,19 @@ export default function About() {
 
         <div className='pt-6'>
           <div className='relative w-fit p-4'>
-            <ShinyText text='Creativity' />
+            <div className='relative inline-block text-7xl font-bold'>
+              <span>Creativity</span>
+              <span
+                className='absolute inset-0 inline-block h-[82px] animate-shine bg-clip-text text-transparent'
+                style={{
+                  backgroundImage:
+                    'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgb(213 213 213 / 80%) 50%, rgba(255, 255, 255, 0) 60%)',
+                  backgroundSize: '200% 100%',
+                }}
+              >
+                Creativity
+              </span>
+            </div>
             <span className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-[var(--background)] to-[var(--base)]'></span>
           </div>
         </div>
