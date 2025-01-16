@@ -7,6 +7,9 @@ export default {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      sm: { max: '1199px' },
+    },
     extend: {
       keyframes: {
         shine: {

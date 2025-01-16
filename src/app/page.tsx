@@ -6,7 +6,7 @@ import Header from '@components/Sections/Header';
 export default async function Portfolio() {
   return (
     <main className='grid grid-cols-12 gap-8 p-8'>
-      <section className='col-span-5 flex h-[calc(100vh-100px)] flex-col justify-between gap-8'>
+      <section className='col-span-5 flex h-[calc(100vh-100px)] flex-col justify-between gap-8 sm:col-span-12 sm:h-fit sm:gap-20'>
         <div className='flex flex-col gap-8'>
           <Header />
           <About />
@@ -16,7 +16,7 @@ export default async function Portfolio() {
       </section>
 
       <Skills />
-      <section className='col-span-7'>Info</section>
+      <section className='col-span-7 sm:col-span-12'>Info</section>
     </main>
   );
 }
