@@ -24,12 +24,12 @@ export default function About() {
                 Creativity
               </span>
             </div>
-            <span className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-[var(--base)] to-[var(--neutral)]'></span>
+            <span className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-base to-neutral'></span>
           </div>
         </div>
       </div>
 
-      <div className='text-pretty py-5 text-xs leading-7 text-[var(--secondary)]'>
+      <div className='text-pretty py-5 text-xs leading-7 text-secondary'>
         I have about 3 years of experience in software development, focusing on frontend. I actively contributed to all
         stages of design, planning, and development in projects and expanded my mobile development skills using Flutter. I
         specialize in creating user-friendly, creative interfaces and am constantly eager to learn new technologies. My aim

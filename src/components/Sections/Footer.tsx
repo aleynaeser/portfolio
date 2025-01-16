@@ -5,9 +5,9 @@ import { socialMediaList } from '@constants/social-media-list';
 export default function Footer() {
   return (
     <footer className='flex items-center justify-between gap-2'>
-      <Link href='https://aleynaeser.tech/' className='group relative text-xs text-[var(--accent)]'>
+      <Link href='https://aleynaeser.tech/' className='group relative text-xs text-accent'>
         www.aleynaeser.tech
-        <span className='absolute bottom-[-2] left-0 h-[1px] w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full'></span>
+        <span className='absolute bottom-[-2] left-0 h-[1px] w-0 bg-accent transition-all duration-300 group-hover:w-full'></span>
       </Link>
 
       <ul className='social-media-list flex gap-4'>
