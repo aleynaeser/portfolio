@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name='theme-color' content='#f9f9f9' />
       </head>
 
-      <body className={`h-screen bg-base text-sm text-primary`}>
+      <body className={`h-full bg-base text-sm text-primary`}>
         {children}
         <BackgroundWaves />
       </body>

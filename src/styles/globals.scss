@@ -8,8 +8,13 @@
   padding: 0;
 }
 
-.social-media-list .navigate-button {
+.social-media-button,
+.navigate-projects-button {
   padding: 0;
   width: 34px;
   height: 34px;
+}
+
+.navigate-projects-button {
+  background-color: var(--dark);
 }

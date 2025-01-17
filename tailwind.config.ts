@@ -32,6 +32,7 @@ export default {
         accent: 'var(--accent)',
         neutral: 'var(--neutral)',
         light: 'var(--light)',
+        dark: 'var(--dark)',
       },
     },
   },

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NavigateButton from '@components/Buttons/NavigateButton';
-import { socialMediaList } from '@constants/social-media-list';
+import { socialMediaLinks } from '@constants/social-media-links';
 
 export default function Footer() {
   return (
@@ -11,9 +11,13 @@ export default function Footer() {
       </Link>
 
       <ul className='social-media-list flex gap-4'>
-        {socialMediaList.map((item, index) => (
+        {socialMediaLinks.map((item, index) => (
           <li key={index}>
-            <NavigateButton Icon={item.icon} href={item.href} className='flex items-center justify-center rounded-full' />
+            <NavigateButton
+              Icon={item.icon}
+              href={item.href}
+              className='social-media-button flex items-center justify-center rounded-full'
+            />
           </li>
         ))}
       </ul>

@@ -1,4 +1,4 @@
-export const skillsList = [
+export const skillsData = [
   'React',
   'Next.js',
   'TypeScript',
