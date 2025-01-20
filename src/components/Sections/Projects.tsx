@@ -7,7 +7,7 @@ export default function Projects() {
       <div>
         <div className='text-2xl font-extralight'>Projects</div>
         <div className='pt-2 text-xs text-secondary leading-6'>erp, crm, single websites, web apps, healtie, flutter apps, ui/ux</div>
-      </div>
+      </div> 
 
       <NavigateButton
         Icon={ShortArrow}
