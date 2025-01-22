@@ -11,20 +11,18 @@ export default function About() {
           <LongArrow />
 
           <div className='relative w-fit p-6'>
-            <div className='relative inline-block text-7xl font-semibold sm:text-5xl'>
-              <span>Creativity</span>
-              <span
-                className='absolute inset-0 inline-block h-[82px] animate-shine bg-clip-text text-transparent'
-                style={{
-                  backgroundImage:
-                    'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgb(213 213 213 / 80%) 50%, rgba(255, 255, 255, 0) 60%)',
-                  backgroundSize: '200% 100%',
-                }}
-              >
-                Creativity
-              </span>
+            <div
+              className='inline-block h-full min-h-[80px] animate-shine bg-clip-text text-7xl font-semibold text-[#e3e3e3a4] sm:text-5xl'
+              style={{
+                backgroundImage:
+                  'linear-gradient(120deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 70%)',
+                backgroundSize: '200% 100%',
+                WebkitBackgroundClip: 'text',
+              }}
+            >
+              Creativity
             </div>
-            <span className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-base to-neutral'></span>
+            <div className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-base to-neutral'></div>
           </div>
         </div>
       </div>

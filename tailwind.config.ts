@@ -22,7 +22,7 @@ export default {
         },
       },
       animation: {
-        shine: 'shine 3s linear infinite',
+        shine: 'shine 2.5s linear infinite',
         'scroll-text': 'scrollText 90s linear infinite',
       },
       colors: {

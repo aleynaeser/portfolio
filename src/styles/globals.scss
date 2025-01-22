@@ -11,10 +11,28 @@
 .social-media-button,
 .navigate-projects-button {
   padding: 0;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
 }
 
-.navigate-projects-button {
-  background-color: var(--dark);
+.layout-card {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    border-radius: 30px;
+    opacity: 0.25;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(120deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 1%));
+    border-radius: 30px;
+    margin: -1px;
+  }
 }

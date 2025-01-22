@@ -20,8 +20,8 @@ interface IBackgroundWaves {
 }
 
 export default function BackgroundWaves({
-  lineColor = '#EFEFEF',
-  backgroundColor = '#f9f9f9',
+  lineColor = '#1a1a1a',
+  backgroundColor = 'var(--base)',
   waveSpeedX = 0.0125,
   waveSpeedY = 0.005,
   waveAmpX = 32,

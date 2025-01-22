@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import BackgroundWaves from '@components/BackgroundWaves';
-
 import '@styles/globals.scss';
 
 const plusJakartaFont = Plus_Jakarta_Sans({
