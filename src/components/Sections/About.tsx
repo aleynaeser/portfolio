@@ -22,7 +22,7 @@ export default function About() {
             >
               Creativity
             </div>
-            <div className='absolute left-0 top-0 -z-[1] h-full w-full bg-gradient-to-b from-base to-neutral'></div>
+            <div className='absolute left-0 top-0 -z-[1] h-full w-full rounded-bl-[30px] rounded-tr-[30px] bg-gradient-to-b from-base to-neutral'></div>
           </div>
         </div>
       </div>

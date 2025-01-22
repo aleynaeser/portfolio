@@ -1,5 +1,3 @@
-'use client';
-
 import { skillsData } from '@constants/skills';
 
 export default function Skills() {
