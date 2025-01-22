@@ -19,6 +19,83 @@ interface IBackgroundWaves {
   className?: string;
 }
 
+class Grad {
+  x: number;
+  y: number;
+  z: number;
+
+  constructor(x: number, y: number, z: number) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+
+  dot2(x: number, y: number): number {
+    return this.x * x + this.y * y;
+  }
+}
+
+class Noise {
+  private grad3: Grad[];
+  private p: number[];
+  private perm: number[];
+  private gradP: Grad[];
+
+  constructor(seed: number = 0) {
+    this.grad3 = [
+      new Grad(1, 1, 0),
+      new Grad(-1, 1, 0),
+      new Grad(1, -1, 0),
+      new Grad(-1, -1, 0),
+      new Grad(1, 0, 1),
+      new Grad(-1, 0, 1),
+      new Grad(1, 0, -1),
+      new Grad(-1, 0, -1),
+      new Grad(0, 1, 1),
+      new Grad(0, -1, 1),
+      new Grad(0, 1, -1),
+      new Grad(0, -1, -1),
+    ];
+    this.p = [...Array(256).keys()];
+    this.perm = new Array(512);
+    this.gradP = new Array(512);
+    this.seed(seed);
+  }
+
+  seed(seed: number): void {
+    if (seed > 0 && seed < 1) seed *= 65536;
+    seed = Math.floor(seed);
+    if (seed < 256) seed |= seed << 8;
+
+    for (let i = 0; i < 256; i++) {
+      const v = i & 1 ? this.p[i] ^ (seed & 255) : this.p[i] ^ ((seed >> 8) & 255);
+      this.perm[i] = this.perm[i + 256] = v;
+      this.gradP[i] = this.gradP[i + 256] = this.grad3[v % 12];
+    }
+  }
+
+  fade(t: number): number {
+    return t * t * t * (t * (t * 6 - 15) + 10);
+  }
+
+  lerp(a: number, b: number, t: number): number {
+    return (1 - t) * a + t * b;
+  }
+
+  perlin2(x: number, y: number): number {
+    const X = Math.floor(x) & 255;
+    const Y = Math.floor(y) & 255;
+    x -= Math.floor(x);
+    y -= Math.floor(y);
+    const n00 = this.gradP[X + this.perm[Y]].dot2(x, y);
+    const n01 = this.gradP[X + this.perm[Y + 1]].dot2(x, y - 1);
+    const n10 = this.gradP[X + 1 + this.perm[Y]].dot2(x - 1, y);
+    const n11 = this.gradP[X + 1 + this.perm[Y + 1]].dot2(x - 1, y - 1);
+    const u = this.fade(x);
+    return this.lerp(this.lerp(n00, n10, u), this.lerp(n01, n11, u), this.fade(y));
+  }
+}
+
 export default function BackgroundWaves({
   lineColor = '#1a1a1a',
   backgroundColor = 'var(--base)',
@@ -228,7 +305,7 @@ export default function BackgroundWaves({
         backgroundColor,
         ...style,
       }}
-      className={`absolute -z-10 left-0 top-0 h-full w-full overflow-hidden ${className}`}
+      className={`absolute left-0 top-0 -z-10 h-full w-full overflow-hidden ${className}`}
     >
       <div
         className='absolute left-0 top-0 h-[0.5rem] w-[0.5rem] rounded-full bg-primary'
@@ -240,81 +317,4 @@ export default function BackgroundWaves({
       <canvas ref={canvasRef} className='block h-full w-full' />
     </div>
   );
-}
-
-class Grad {
-  x: number;
-  y: number;
-  z: number;
-
-  constructor(x: number, y: number, z: number) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-  }
-
-  dot2(x: number, y: number): number {
-    return this.x * x + this.y * y;
-  }
-}
-
-class Noise {
-  private grad3: Grad[];
-  private p: number[];
-  private perm: number[];
-  private gradP: Grad[];
-
-  constructor(seed: number = 0) {
-    this.grad3 = [
-      new Grad(1, 1, 0),
-      new Grad(-1, 1, 0),
-      new Grad(1, -1, 0),
-      new Grad(-1, -1, 0),
-      new Grad(1, 0, 1),
-      new Grad(-1, 0, 1),
-      new Grad(1, 0, -1),
-      new Grad(-1, 0, -1),
-      new Grad(0, 1, 1),
-      new Grad(0, -1, 1),
-      new Grad(0, 1, -1),
-      new Grad(0, -1, -1),
-    ];
-    this.p = [...Array(256).keys()];
-    this.perm = new Array(512);
-    this.gradP = new Array(512);
-    this.seed(seed);
-  }
-
-  seed(seed: number): void {
-    if (seed > 0 && seed < 1) seed *= 65536;
-    seed = Math.floor(seed);
-    if (seed < 256) seed |= seed << 8;
-
-    for (let i = 0; i < 256; i++) {
-      const v = i & 1 ? this.p[i] ^ (seed & 255) : this.p[i] ^ ((seed >> 8) & 255);
-      this.perm[i] = this.perm[i + 256] = v;
-      this.gradP[i] = this.gradP[i + 256] = this.grad3[v % 12];
-    }
-  }
-
-  fade(t: number): number {
-    return t * t * t * (t * (t * 6 - 15) + 10);
-  }
-
-  lerp(a: number, b: number, t: number): number {
-    return (1 - t) * a + t * b;
-  }
-
-  perlin2(x: number, y: number): number {
-    const X = Math.floor(x) & 255;
-    const Y = Math.floor(y) & 255;
-    x -= Math.floor(x);
-    y -= Math.floor(y);
-    const n00 = this.gradP[X + this.perm[Y]].dot2(x, y);
-    const n01 = this.gradP[X + this.perm[Y + 1]].dot2(x, y - 1);
-    const n10 = this.gradP[X + 1 + this.perm[Y]].dot2(x - 1, y);
-    const n11 = this.gradP[X + 1 + this.perm[Y + 1]].dot2(x - 1, y - 1);
-    const u = this.fade(x);
-    return this.lerp(this.lerp(n00, n10, u), this.lerp(n01, n11, u), this.fade(y));
-  }
 }

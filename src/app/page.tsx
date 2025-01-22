@@ -8,7 +8,7 @@ import Experience from '@components/Sections/Experience';
 
 export default async function Portfolio() {
   return (
-    <main className='grid h-full min-h-screen grid-cols-12 gap-8 p-8'>
+    <main className='md:gap-6 md:p-6 grid h-full min-h-screen grid-cols-12 gap-8 p-8'>
       <section className='md:col-span-12 col-span-5 flex flex-col gap-8'>
         <Header />
         <About />
