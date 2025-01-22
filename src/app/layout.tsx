@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import BackgroundWaves from '@components/BackgroundWaves';
+import * as motion from 'motion/react-client';
 import '@styles/globals.scss';
 
 const plusJakartaFont = Plus_Jakarta_Sans({
@@ -31,10 +32,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name='theme-color' content='#f9f9f9' />
       </head>
 
-      <body className={`h-full bg-base text-sm text-primary`}>
+      <motion.body
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className={`h-full bg-base text-sm text-primary`}
+        transition={{
+          duration: 0.3,
+          scale: { type: 'spring', visualDuration: 0.3, bounce: 0.5 },
+        }}
+      >
         {children}
         <BackgroundWaves />
-      </body>
+      </motion.body>
     </html>
   );
 }
