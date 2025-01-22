@@ -3,7 +3,7 @@ import { educationData } from '@constants/education';
 
 export default function Education() {
   return (
-    <LayoutCard className='col-span-4'>
+    <LayoutCard className='xs:col-span-7 col-span-4 sm:col-span-5'>
       <div>
         <div className='text-2xl font-extralight'>Education</div>
         <div className='pt-2 text-xs font-extralight italic text-secondary'>Master Degree</div>

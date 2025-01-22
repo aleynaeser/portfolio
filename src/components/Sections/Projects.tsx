@@ -4,10 +4,10 @@ import LayoutCard from '@components/LayoutCard';
 
 export default function Projects() {
   return (
-    <LayoutCard className='col-span-3'>
+    <LayoutCard className='xs:col-span-7 col-span-3 sm:col-span-2'>
       <div>
         <div className='text-2xl font-extralight'>Projects</div>
-        <div className='pt-2 text-xs leading-6 text-secondary font-extralight italic'>
+        <div className='pt-2 text-xs font-extralight italic leading-6 text-secondary'>
           erp, crm, single websites, web apps, healtie, flutter apps, ui/ux
         </div>
       </div>

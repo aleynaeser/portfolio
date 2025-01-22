@@ -36,10 +36,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <motion.body
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className={`h-full bg-base text-sm text-primary`}
+        className={`relative h-full bg-base text-sm text-primary`}
         transition={{
-          duration: 0.4,
-          scale: { type: 'spring', visualDuration: 0.4, bounce: 0.5 },
+          duration: 0.5,
+          scale: { type: 'spring', visualDuration: 0.5, bounce: 0.5 },
         }}
       >
         {children}

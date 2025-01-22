@@ -8,18 +8,13 @@ import Experience from '@components/Sections/Experience';
 
 export default async function Portfolio() {
   return (
-    <main className='grid h-full grid-cols-12 gap-8 p-8'>
-      <section className='col-span-5 flex h-[calc(100vh-100px)] flex-col justify-between gap-8 sm:col-span-12 sm:h-fit sm:gap-20'>
-        <div className='flex flex-col gap-8'>
-          <Header />
-          <About />
-        </div>
-
-        <Footer />
+    <main className='grid h-full min-h-screen grid-cols-12 gap-8 p-8'>
+      <section className='md:col-span-12 col-span-5 flex flex-col gap-8'>
+        <Header />
+        <About />
       </section>
 
-      <Skills />
-      <section className='col-span-7 sm:col-span-12'>
+      <section className='md:col-span-12 md:pt-8 col-span-7'>
         <div className='grid grid-cols-7 gap-5'>
           <Education />
           <Projects />
@@ -27,6 +22,10 @@ export default async function Portfolio() {
 
         <Experience />
       </section>
+
+      <Skills />
+
+      <Footer />
     </main>
   );
 }

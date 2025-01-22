@@ -4,7 +4,7 @@ import { socialMediaLinks } from '@constants/social-media-links';
 
 export default function Footer() {
   return (
-    <footer className='flex items-center justify-between gap-2'>
+    <footer className='md:pb-11 md:pt-4 md:col-span-12 col-span-5 flex items-center justify-between gap-2 '>
       <Link href='https://aleynaeser.tech/' className='group relative text-xs text-accent'>
         www.aleynaeser.tech
         <span className='absolute bottom-[-2] left-0 h-[1px] w-0 bg-accent transition-all duration-300 group-hover:w-full'></span>

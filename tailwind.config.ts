@@ -8,7 +8,9 @@ export default {
   ],
   theme: {
     screens: {
-      sm: { max: '1199px' },
+      xs: { max: '575px' },
+      sm: { min: '575px', max: '991px' },
+      md: { max: '1199px' },
     },
     extend: {
       keyframes: {
