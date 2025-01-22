@@ -12,7 +12,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, width: 0 }}
           animate={{ opacity: 1, width: '100%' }}
-          transition={{ duration: 0.95, ease: 'easeInOut' }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
           className='flex items-center gap-7 pt-6'
         >
           <LongArrow />
@@ -27,7 +27,7 @@ export default function About() {
                 WebkitBackgroundClip: 'text',
               }}
             >
-              <AnimatedText text='Creativity' duration={0.96} delay={0.96} />
+              <AnimatedText text='Creativity' duration={0.92} delay={0.92} />
             </div>
 
             <div className='absolute left-0 top-0 -z-[1] h-full w-full rounded-bl-[30px] rounded-tr-[30px] bg-gradient-to-b from-base to-neutral'></div>
