@@ -27,7 +27,7 @@ export default function About() {
                 WebkitBackgroundClip: 'text',
               }}
             >
-              <AnimatedText text='Creativity' duration={0.96} delay={0.8} />
+              <AnimatedText text='Creativity' duration={0.96} delay={0.96} />
             </div>
 
             <div className='absolute left-0 top-0 -z-[1] h-full w-full rounded-bl-[30px] rounded-tr-[30px] bg-gradient-to-b from-base to-neutral'></div>
