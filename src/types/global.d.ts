@@ -10,4 +10,12 @@ export declare global {
     degree: string;
     date: string;
   }
+
+  interface IExperience {
+    title: string;
+    company: string;
+    date: string;
+    location: string;
+    description: string;
+  }
 }
