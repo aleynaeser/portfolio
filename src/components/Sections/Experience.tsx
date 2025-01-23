@@ -10,12 +10,12 @@ export default function Experience() {
 
   const currentExperience = useMemo(() => experienceData[activeIndex], [activeIndex]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <LayoutCard className='mt-5 overflow-hidden'>
@@ -71,7 +71,7 @@ export default function Experience() {
               </div>
             ))}
           </div>
-  
+
           <div className='absolute -bottom-20 -right-20 -z-10 h-96 w-96 rounded-full border border-dark'></div>
         </div>
       </div>
