@@ -13,7 +13,7 @@ export const experienceData: IExperience[] = [
     date: '02/2022 – 06/2022',
     location: 'Ankara',
     description:
-      'Contributed to the development of the Healtie mobile app using Flutter, MVVM architecture and Rest API/JSON. Handled the design process using Figma, developed with data fetching from RESTful APIs, and iteratively improved the application based on requirements.',
+      'Contributed to the development of the Healtie mobile app using Flutter, MVVM architecture and Rest API/JSON. Handled the design process using Figma, developed with data fetching from RESTful APIs, and iteratively improved the app based on requirements.',
   },
   {
     title: 'IT Intern',

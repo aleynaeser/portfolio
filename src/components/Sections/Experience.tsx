@@ -1,21 +1,24 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { experienceData } from '@constants/experience';
 import LayoutCard from '@components/LayoutCard';
 import classNames from 'classnames';
 
+//TODO: Make absolute circle side, update mobile ui based on active, add active circle animation
+
 export default function Experience() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeIndex, setActiveIndex] = useState(0);
 
   const currentExperience = useMemo(() => experienceData[activeIndex], [activeIndex]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <LayoutCard className='mt-5 overflow-hidden'>
