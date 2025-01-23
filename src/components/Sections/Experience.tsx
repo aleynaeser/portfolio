@@ -5,6 +5,7 @@ import { experienceData } from '@constants/experience';
 import LayoutCard from '@components/LayoutCard';
 import classNames from 'classnames';
 
+//TODO: Improve calculations
 //TODO: Make absolute circle side, update mobile ui based on active, add active circle animation
 
 export default function Experience() {
