@@ -17,7 +17,7 @@ export default function Experience() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
-    }, 8000);
+    }, 15000);
     return () => clearInterval(interval);
   }, []);
 
