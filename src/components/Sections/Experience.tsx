@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { motion } from 'motion/react';
+import { useEffect, useMemo, useState } from 'react';
 import { experienceData } from '@constants/experience';
 import LayoutCard from '@components/LayoutCard';
 import classNames from 'classnames';
@@ -9,17 +10,16 @@ import classNames from 'classnames';
 //TODO: Make absolute circle side, update mobile ui based on active, add active circle animation
 
 export default function Experience() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeIndex, setActiveIndex] = useState(0);
 
   const currentExperience = useMemo(() => experienceData[activeIndex], [activeIndex]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % experienceData.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <LayoutCard className='mt-5 overflow-hidden'>
@@ -31,7 +31,7 @@ export default function Experience() {
         <div className='max-w-[400px] text-pretty text-xs leading-7 text-secondary'>{currentExperience.description}</div>
       </div>
 
-      <div className='relative flex h-80 flex-col items-end gap-5'>
+      <div className='relative flex h-80 justify-end gap-5'>
         <div className='flex flex-col items-end gap-5'>
           {experienceData.map((experience, index) => (
             <div
@@ -49,35 +49,38 @@ export default function Experience() {
           ))}
         </div>
 
-        <div className='absolute -bottom-0 -right-0 -top-0 flex flex-col gap-5'>
-          <div>
-            {experienceData.map((experience, index) => (
+        <div className='absolute right-28'>
+          {experienceData.map((experience, index) => {
+            const isActive = activeIndex === index;
+
+            return (
               <div
                 key={index}
-                className={classNames(`flex w-fit flex-col gap-2 whitespace-nowrap`, {
-                  'mr-12 mt-10': index === 0,
-                  'mr-24 mt-1': index === 1,
-                  // 'mr-96 mt-16': index === 2,
-                  // 'mr-80 mt-20': index === 3,
+                className={classNames(`absolute flex w-fit items-center gap-5 whitespace-nowrap`, {
+                  '-right-16 top-[16px] flex-col': index === 0,
+                  'right-5 top-[101px]': index === 1,
+                  'right-14 top-48': index === 2,
+                  'right-9 top-72': index === 3,
                 })}
               >
-                <div className='h-2 w-2 rounded-full bg-accent'></div>
-                <div
-                  className={classNames(`text-xs text-accent`, {
-                    // 'mr-4': index === 0,
-                    // '-mt-1 mr-72': index === 1,
-                    // 'mr-96 mt-16': index === 2,
-                    // 'mr-80 mt-20': index === 3,
+                <motion.div
+                  initial={{ scale: 1 }}
+                  animate={{ scale: isActive ? 1.2 : 1 }}
+                  transition={{ type: 'spring', duration: 0.5, damping: 10, stiffness: 100 }}
+                  className={classNames('relative h-3 w-3 rounded-full bg-accent duration-300 ease-in-out', {
+                    'bg-primary': isActive,
                   })}
-                >
+                ></motion.div>
+
+                <div className={classNames(`text-xs text-accent duration-300 ease-in-out`, { 'text-secondary': isActive })}>
                   {experience.date}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className='absolute -bottom-20 -right-20 -z-10 h-96 w-96 rounded-full border border-dark'></div>
+            );
+          })}
         </div>
+
+        <div className='absolute -bottom-[84px] -right-20 -z-10 h-96 w-96 rounded-full border border-secondary'></div>
       </div>
     </LayoutCard>
   );
