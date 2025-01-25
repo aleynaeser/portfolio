@@ -23,12 +23,12 @@ export default function Experience() {
 
   return (
     <LayoutCard className='mt-5 overflow-hidden'>
-      <div className='flex flex-col gap-4'>
+      <div className='pb-20 flex flex-col gap-4'>
         <div className='text-2xl'>
           {currentExperience.company} - <span className='font-extralight italic'>{currentExperience.title}</span>
         </div>
 
-        <div className='max-w-[400px] text-pretty text-xs leading-7 text-secondary'>{currentExperience.description}</div>
+        <div className='max-w-[410px] text-pretty text-xs leading-7 text-secondary'>{currentExperience.description}</div>
       </div>
 
       <div className='relative flex h-80 justify-end gap-5'>
