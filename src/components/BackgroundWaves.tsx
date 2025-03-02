@@ -307,7 +307,7 @@ export default function BackgroundWaves({
       className={`absolute left-0 top-0 h-full w-full overflow-hidden ${className}`}
     >
       <div
-        className='absolute left-0 top-0 z-20 h-[0.5rem] w-[0.5rem] rounded-full bg-primary'
+        className='absolute -left-2 -top-2 z-20 h-[0.5rem] w-[0.5rem] rounded-full bg-primary'
         style={{
           transform: 'translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0)',
           willChange: 'transform',
