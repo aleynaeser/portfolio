@@ -35,13 +35,13 @@ export default function About() {
         </motion.div>
       </div>
 
-      <div className='text-pretty py-5 text-xs leading-7 text-secondary'>
+      <p className='text-pretty py-5 text-xs leading-7 text-secondary'>
         I have about 3 years of experience in software development, focusing on frontend. I actively contributed to all
         stages of design, planning, and development in projects and expanded my mobile development skills using Flutter. I
         specialize in creating user-friendly, creative interfaces and am constantly eager to learn new technologies. My aim
         is to collaborate with a team where I can contribute my expertise and strong work ethic while gaining new
         experiences.
-      </div>
+      </p>
 
       <NavigateButton text='Get Touch' href='https://www.linkedin.com/in/aleyna-eser/' />
     </div>

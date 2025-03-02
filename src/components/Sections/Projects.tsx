@@ -6,10 +6,10 @@ export default function Projects() {
   return (
     <LayoutCard className='xs:col-span-7 col-span-3 sm:col-span-2'>
       <div>
-        <div className='text-2xl font-extralight'>Projects</div>
-        <div className='pt-2 text-xs font-extralight italic leading-6 text-secondary'>
+        <h3 className='text-2xl font-extralight'>Projects</h3>
+        <p className='pt-2 text-xs font-extralight italic leading-6 text-secondary'>
           erp, crm, single websites, web apps, healtie, flutter apps, ui/ux
-        </div>
+        </p>
       </div>
 
       <NavigateButton

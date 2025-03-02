@@ -5,12 +5,12 @@ export default function Header() {
         <div className='h-8 border-r border-primary pr-3 text-3xl font-semibold'>AE.</div>
 
         <div className='flex flex-col gap-[2px]'>
-          <div className='font-medium'>Aleyna Eser</div>
-          <div className='text-xs font-extralight text-secondary'>Frontend Developer</div>
+          <h2 className='font-medium'>Aleyna Eser</h2>
+          <h3 className='text-xs font-extralight text-secondary'>Frontend Developer</h3>
         </div>
       </div>
 
-      <div className='text-xs font-extralight text-secondary'>3 years of experience</div>
+      <p className='text-xs font-extralight text-secondary'>3 years of experience</p>
     </header>
   );
 }

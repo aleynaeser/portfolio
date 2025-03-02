@@ -5,7 +5,7 @@ export default function Education() {
   return (
     <LayoutCard className='xs:col-span-7 col-span-4 sm:col-span-5'>
       <div>
-        <div className='text-2xl font-extralight'>Education</div>
+        <h3 className='text-2xl font-extralight'>Education</h3>
         <div className='pt-2 text-xs font-extralight italic text-secondary'>Master Degree</div>
       </div>
 

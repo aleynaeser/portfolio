@@ -14,7 +14,7 @@ export default function AnimatedText({ text, duration = 0.3, delay = 0 }: IAnima
   const isInView = useInView(textRef, { once: true });
 
   return (
-    <div className='text-7xl font-semibold md:text-5xl'>
+    <h1 className='text-7xl font-semibold md:text-5xl'>
       <AnimatePresence>
         {text.split('').map((char, i) => (
           <motion.span
@@ -29,6 +29,6 @@ export default function AnimatedText({ text, duration = 0.3, delay = 0 }: IAnima
           </motion.span>
         ))}
       </AnimatePresence>
-    </div>
+    </h1>
   );
 }
