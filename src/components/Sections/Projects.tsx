@@ -14,7 +14,7 @@ export default function Projects() {
 
       <NavigateButton
         Icon={ShortArrow}
-        href='https://github.com/aleynaeser'
+        href='https://github.com/aleynaeser?tab=repositories'
         className='navigate-projects-button flex w-3 items-center justify-center bg-base'
       />
     </LayoutCard>
