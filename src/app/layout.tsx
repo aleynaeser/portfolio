@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import BackgroundWaves from '@components/BackgroundWaves';
 import * as motion from 'motion/react-client';
 
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       >
         {children}
         <BackgroundWaves />
+        <SpeedInsights />
       </motion.body>
     </html>
   );
