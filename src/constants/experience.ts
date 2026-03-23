@@ -5,7 +5,7 @@ export const experienceData: IExperience[] = [
     date: '07/2022 – 12/2024',
     location: 'Trabzon',
     description:
-      'Handled large data operations and API integrations while actively contributing to design workflows in Figma, project planning, frontend development processes, and backend communication.',
+      'Managed large-scale data and API integrations while contributing to Figma design, project planning, and frontend-backend communication.',
   },
   {
     title: 'Mobile Developer',
@@ -13,7 +13,7 @@ export const experienceData: IExperience[] = [
     date: '02/2022 – 06/2022',
     location: 'Ankara',
     description:
-      'Contributed to the development of the Healtie mobile app using Flutter, MVVM architecture and Rest API/JSON. Handled the design process using Figma, developed with data fetching from RESTful APIs, and iteratively improved the app based on requirements.',
+      'Led the end-to-end development of the Healtie app, from UI design in Figma to Flutter implementation with MVVM and REST API integration.',
   },
   {
     title: 'IT Intern',

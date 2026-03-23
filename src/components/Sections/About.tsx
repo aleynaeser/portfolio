@@ -36,11 +36,11 @@ export default function About() {
       </div>
 
       <p className='text-pretty py-5 text-xs leading-7 text-secondary'>
-        I have about 3 years of experience in software development, focusing on frontend. I actively contributed to all
-        stages of design, planning, and development in projects and expanded my mobile development skills using Flutter. I
-        specialize in creating user-friendly, creative interfaces and am constantly eager to learn new technologies. My aim
-        is to collaborate with a team where I can contribute my expertise and strong work ethic while gaining new
-        experiences.
+        Software Developer with 3 years of experience focusing on frontend for web and mobile apps. I specialize in the
+        JavaScript ecosystem with React (Next.js) and Vue (Nuxt), alongside Flutter for mobile. I am passionate about
+        creating value through clean code and user friendly interfaces, often bridging the gap between UI design and
+        development. I enjoy being involved in the entire product lifecycle from planning in Figma to final deployment. I’m
+        looking for a collaborative team where I can contribute effectively and continue growing.
       </p>
 
       <NavigateButton text='Get Touch' href='https://www.linkedin.com/in/aleyna-eser/' />

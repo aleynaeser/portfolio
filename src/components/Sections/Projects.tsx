@@ -14,7 +14,7 @@ export default function Projects() {
 
       <NavigateButton
         Icon={ShortArrow}
-        href='https://github.com/aleynaeser?tab=repositories'
+        href='https://www.figma.com/proto/eDUpOjCkGu2XiBMyDKzYYv/PROJECT-URLs?node-id=21-386&t=I4VWPZos6xbF2BUJ-1&starting-point-node-id=21%3A386&scaling=min-zoom&content-scaling=fixed'
         className='navigate-projects-button flex w-3 items-center justify-center bg-base'
       />
     </LayoutCard>
